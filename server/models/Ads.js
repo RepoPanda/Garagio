@@ -15,11 +15,17 @@ const adsSchema = new Schema({
     price: {
         type: Number,
     },
+    quantity: {
+        type: Number,
+        min: 0,
+        default: 0  
+    },
     location: {
         type: String,
     },
     sold: {
         type: Boolean,
+        default:false,
     },
 });
 

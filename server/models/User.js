@@ -3,29 +3,34 @@ const bcrypt = require('bcrypt');
 
 
 
-const userSchema = new Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      // match: [/.+@.+\..+/, 'Must match an email address!'],
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+const userSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
   },
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    // match: [/.+@.+\..+/, 'Must match an email address!'],
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  ads: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Ads',
+    }, 
+  ],
+},
+  // {
+  //   toJSON: {
+  //     virtuals: true,
+  //   },
+  // }
 );
 
 userSchema.pre('save', async function (next) {

@@ -1,5 +1,5 @@
-const User = require('../models/Ads');
-const Ads = require('../models/User');
+const {User, Ads} = require('../models');
+
 
 const resolvers = {
     Query: {
@@ -11,7 +11,9 @@ const resolvers = {
         }
     },
     Mutation: {
-        
+        postAd: async (_, args) => {
+            return await Ads.create(args);
+        }
     }
 }
 

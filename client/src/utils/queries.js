@@ -1,1 +1,29 @@
-// import{gql} from "@apollo/client";
+import{gql} from "@apollo/client";
+
+export const USERS = gql`
+query users {
+  users {
+    _id
+    username
+    email
+    password
+    ads {
+      _id
+    }
+    isSeller
+  }
+}
+`
+export const ADS = gql`
+query ads {
+  ads {
+    _id
+    title
+    description
+    image
+    price
+    quantity
+    location
+    sold
+  }
+}`

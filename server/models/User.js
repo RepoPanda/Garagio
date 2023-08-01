@@ -23,8 +23,12 @@ const userSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Ads',
-    }, 
+    },
   ],
+  isSeller: {
+    type: Boolean,
+    required: true,
+  }
 },
   // {
   //   toJSON: {

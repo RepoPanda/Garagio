@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Auth from '../utils/auth';
 
 function Nav() {
     return(
@@ -6,14 +7,23 @@ function Nav() {
             <Link to="/">
             Home
             </Link>
-
-            <Link to="/signup">
-            SignUp
-            </Link>
-
-            <Link to="/login">
-            Login
-            </Link>
+            {Auth.loggedIn()?(
+                <>
+                <Link to="/dashboard">
+                Dashboard
+                </Link>
+                </>
+            ) : (
+                <>
+                <Link to="/signup">
+                SignUp
+                </Link>
+    
+                <Link to="/login">
+                Login
+                </Link>
+                </>
+            )}
         </nav>
     )
 }

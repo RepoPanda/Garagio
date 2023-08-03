@@ -6,7 +6,7 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
-import CreateDashboardForm from './pages/CreateDashboardForm';
+import Dashboard from './pages/Dashboard';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -48,7 +48,7 @@ function App() {
           />
           <Route
             path="/dashboard"
-            element={<CreateDashboardForm/>}
+            element={<Dashboard />}
           />
         </Routes>
       </Router>

@@ -33,11 +33,9 @@ function LogIn () {
         const response = await loginUser({
           variables: { ...userFormData },
         });
-        if (!response.ok) {
-          throw new Error('Sorry, something went wrong while trying to log you in!');
-        }
+        console.log(response);
 
-        const { token, user } = await response.json();
+        const { token, user } = await response.data.login;
         console.log(user);
         Auth.login(token);
 
@@ -52,6 +50,9 @@ function LogIn () {
       });
     };
 
+    if (Auth.loggedIn()) {
+      window.location.assign('/');
+    }
 
     return (
       <>

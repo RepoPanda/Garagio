@@ -56,6 +56,7 @@ login (
 	email: String!, 
     password: String!
 ): Auth
+
 }
 `;
 

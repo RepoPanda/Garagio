@@ -11,6 +11,7 @@ function SignUp () {
         username: '',
         email: '',
         password: '',
+        isSeller: false,
       });
       // set state for form validation
       const [validated] = useState(false);
@@ -107,6 +108,18 @@ function SignUp () {
                 onChange={handleChange}
                 value={userFormData.password}
                 required
+              />
+              <Form.Control.Feedback type="invalid">
+                Password is required!
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label htmlFor="isSeller">Selling Items?</Form.Label>
+              <Form.Control
+                type="checkbox"
+                name="isSeller"
+                onChange={ () => setUserFormData({...userFormData, isSeller: !userFormData.isSeller})}
+                value={userFormData.isSeller}
               />
               <Form.Control.Feedback type="invalid">
                 Password is required!

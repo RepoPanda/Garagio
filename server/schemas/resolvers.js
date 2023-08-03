@@ -17,6 +17,14 @@ const resolvers = {
             } else { 
                 throw new AuthenticationError('You need to be logged in!')
             }
+        },
+        me: async (_, args, context) => {
+            if (context.user) {
+                return await User.findById(context.user._id).populate('ads');
+            } else { 
+                throw new AuthenticationError('You need to be logged in!')
+            }
+
         }
     },
     Mutation: {

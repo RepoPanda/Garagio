@@ -22,7 +22,6 @@ mutation createUser($username: String, $email: String, $password: String, $isSel
       _id
       username
       email
-      password
       ads {
         _id
       }

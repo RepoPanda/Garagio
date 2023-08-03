@@ -12,8 +12,7 @@ query users {
     }
     isSeller
   }
-}
-`
+}`;
 export const ADS = gql`
 query ads {
   ads {
@@ -26,4 +25,24 @@ query ads {
     location
     sold
   }
-}`
+}`;
+
+export const ME = gql`
+query me {
+  me {
+    _id
+    username
+    email
+    ads {
+      _id
+      title
+      description
+      image
+      price
+      quantity
+      location
+      sold
+    }
+    isSeller
+  }
+}`;

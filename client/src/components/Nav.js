@@ -12,6 +12,10 @@ function Nav() {
                 <Link to="/dashboard">
                 Dashboard
                 </Link>
+                <a href='#' onClick={(e) => {
+                    e.preventDefault();
+                    Auth.logout();
+                } }>Log Out</a>
                 </>
             ) : (
                 <>

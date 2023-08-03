@@ -22,7 +22,6 @@ type User {
 _id: ID
 username: String!
 email: String!
-password: String!
 ads: [Ads]
 isSeller: Boolean!
 }
@@ -31,6 +30,7 @@ type Query {
 ads: [Ads]
 users: [User]
 secret: String
+me: User
 }
 
 type Mutation {

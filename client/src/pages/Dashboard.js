@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { ADS } from "../utils/queries";
+import { ADS, ME } from "../utils/queries";
 import { POST_AD } from "../utils/mutations";
 
 function Dashboard() {
-  const { loading, data } = useQuery(ADS);
-  const ads = data?.adds || [];
+  const { loading, data } = useQuery(ME);
+  const me = data?.me || {};
 
   const [postAd] = useMutation(POST_AD);
   const [formState, setFormState] = useState({
@@ -20,7 +20,14 @@ function Dashboard() {
   const handleChange = (event) => {
     event.preventDefault();
 
-    const { name, value } = event.target;
+    let { name, value } = event.target;
+
+    const valueAsFloat = parseFloat(value);
+
+    if (!Number.isNaN(valueAsFloat)) {
+      value = valueAsFloat;
+    }
+
     setFormState({
       ...formState,
       [name]: value,
@@ -37,24 +44,6 @@ function Dashboard() {
 
   return (
     <>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        ads.map((ads, index) => {
-          return (
-            <div key={index}>
-              <h2>{ads.title}</h2>
-              <ul>
-                <li>description: {ads.description}</li>
-                <li>Image: {ads.image}</li>
-                <li>Price: {ads.price}</li>
-                <li>Quantity: {ads.quantity}</li>
-                <li>Location: {ads.location}</li>
-              </ul>
-            </div>
-          );
-        })
-      )}
       <form onSubmit={handleSubmit}>
         <label>
           Title:

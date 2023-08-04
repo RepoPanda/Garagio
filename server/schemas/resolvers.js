@@ -28,8 +28,20 @@ const resolvers = {
         }
     },
     Mutation: {
-        postAd: async (_, args) => {
-            return await Ads.create(args);
+        postAd: async (_, args, context) => {
+            const ad = await Ads.create(args);
+
+            // const me = await User.findById(context.user._id);
+            // me.ads.push(ad._id);
+            // me.save();
+
+            await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $push: { ads: ad._id } },
+                { new: true }
+            );
+
+            return ad;
         },
         createUser: async (_, args) => {
             const user = await User.create(args);

@@ -1,0 +1,121 @@
+:root {
+  --primary: #f7f4ef;
+  --secondary: #fffdd0;
+  --tertiary: #cccaa6;
+  --lighter-dark: #08c17d;
+  --light-dark: #003c00;
+  --dark: #001e00;
+  --border-radius: 0.3rem;
+}
+
+body {
+  background-color: var(--secondary);
+}
+
+.app-logo {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--tertiary);
+}
+.form-css {
+  /* margin-top: 150px; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.form-group input {
+  width: 60%;
+}
+
+.form-css > form {
+
+  border: 4px groove;
+  border-color: #08c17d;
+  border-radius: 10px;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin: 40px 40px 40px 40px;
+  padding: 40px 40px 40px 40px;
+}
+
+.form-css > h1 {
+  margin: auto;
+  text-align: center;
+}
+
+.home-css {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 4px groove;
+  border-color: #08c17d;
+  border-radius: 10px;
+  color: #080808;
+  font-family: "Times New Roman", Times, serif;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav-bar {
+  width: 100%;
+  /* position: fixed; */
+  background-color: var(--dark);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a,
+nav a:visited {
+  text-decoration: none;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius);
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+nav a:hover,
+nav a:active {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+.submit-button {
+
+}
+
+.ad-render {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 4px groove;
+  border-color: #08c17d;
+  border-radius: 10px;
+  color: #080808;
+  font-family: "Times New Roman", Times, serif;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+}
+
+.login-css, .signup-css {
+  border: 4px groove;
+  border-color: #08c17d;
+  border-radius: 10px;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  margin: 40px 40px 40px 40px;
+  padding: 40px 40px 40px 40px;
+}

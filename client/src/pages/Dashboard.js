@@ -6,6 +6,7 @@ import { POST_AD } from "../utils/mutations";
 function Dashboard() {
   const { loading, data } = useQuery(ME);
   const me = data?.me || {};
+  // const userAdData = me.ads;
 
   const [postAd] = useMutation(POST_AD);
   const [formState, setFormState] = useState({
@@ -22,10 +23,10 @@ function Dashboard() {
 
     let { name, value } = event.target;
 
-    const valueAsFloat = parseFloat(value);
-
-    if (!Number.isNaN(valueAsFloat)) {
-      value = valueAsFloat;
+    if (name === "price") {
+      value = parseFloat(value);
+    } else if (name === "quantity") {
+      value = parseInt(value);
     }
 
     setFormState({
@@ -37,76 +38,115 @@ function Dashboard() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    await postAd({
-      variables: formState,
-    });
+    try {
+      await postAd({
+        variables: formState,
+      });
+
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title:
-          <input
-            type="text"
-            name="title"
-            value={formState.title}
-            onChange={handleChange}
-          />
-        </label>
+      <div className="form-css">
+        <form onSubmit={handleSubmit}>
+        
+          <h1>Item Posting</h1>
+          
 
-        <label>
-          description:
-          <input
-            type="text"
-            name="description"
-            value={formState.description}
-            onChange={handleChange}
-          />
-        </label>
+          <div className="form-group">
+            <label htmlFor="title">Title:</label>
+            <input
+              id="title"
+              type="text"
+              name="title"
+              value={formState.title}
+              onChange={handleChange}
+            />
+          </div>
 
-        <label>
-          Image:
-          <input
-            type="text"
-            name="image"
-            value={formState.image}
-            onChange={handleChange}
-          />
-        </label>
+          <div className="form-group">
+            <label htmlFor="description">Description:</label>
+            <input
+              id="description"
+              type="text"
+              name="description"
+              value={formState.description}
+              onChange={handleChange}
+            />
+          </div>
 
-        <label>
-          Price:
-          <input
-            type="number"
-            name="price"
-            value={formState.price}
-            onChange={handleChange}
-          />
-        </label>
+          <div className="form-group">
+            <label htmlFor="image">Image:</label>
+            <input
+              id="image"
+              type="text"
+              name="image"
+              value={formState.image}
+              onChange={handleChange}
+            />
+          </div>
 
-        <label>
-          Quantity:
-          <input
-            type="number"
-            name="quantity"
-            value={formState.quantity}
-            onChange={handleChange}
-          />
-        </label>
+          <div className="form-group">
+            <label htmlFor="price">Price:</label>
+            <input
+              id="price"
+              type="number"
+              name="price"
+              value={formState.price}
+              onChange={handleChange}
+            />
+          </div>
 
-        <label>
-          Location:
-          <input
-            type="text"
-            name="location"
-            value={formState.location}
-            onChange={handleChange}
-          />
-        </label>
+          <div className="form-group">
+            <label htmlFor="quantity">Quantity</label>
+            <input
+              id="quantity"
+              type="number"
+              name="quantity"
+              value={formState.quantity}
+              onChange={handleChange}
+            />
+          </div>
 
-        <button type="submit">Post New Ad</button>
-      </form>
+          <div className="form-group">
+            <label htmlFor="location">Location:</label>
+            <input
+              id="location"
+              type="text"
+              name="location"
+              value={formState.location}
+              onChange={handleChange}
+            />
+          </div>
+          
+            <button className="submit-button" type="submit">Post New Ad</button>
+          
+        </form>
+      </div>
+      <div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          me.ads.map((userAd, index) => {
+            return (
+              <div className="ad-render" key={index}>
+                <h2>{userAd.title}</h2>
+                <ul>
+                  <li>Description: {userAd.description}</li>
+                  <li>Image Here: {userAd.image}</li>
+                  <li>Price: {userAd.price}</li>
+                  <li>Quantity: {userAd.quantity}</li>
+                  <li>Location: {userAd.location}</li>
+                </ul>
+              </div>
+            );
+          })
+        )}
+      </div>
     </>
   );
 }

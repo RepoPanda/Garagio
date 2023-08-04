@@ -56,7 +56,7 @@ function LogIn () {
 
     return (
       <>
-        <Card>
+        <Card className="login-css">
           <Card.Body>
             <Form onSubmit= {handleFormSubmit}>
               <Form.Group className="mb-3" controlId="formGroupEmail">

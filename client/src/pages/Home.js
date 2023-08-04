@@ -8,12 +8,13 @@ function Home() {
 
     return (
         <>
+        <div>
             {loading ? (
                 <div>Loading...</div>
             ) : (
                 ads.map((ads, index) => {
                     return (
-                        <div key={index}>
+                        <div className = "home-css" key={index}>
                             <h2>
                               {ads.title}
                             </h2>
@@ -28,6 +29,7 @@ function Home() {
                     )
                 })
             )}
+        </div>
         </>
 
     )

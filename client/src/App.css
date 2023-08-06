@@ -116,6 +116,51 @@ nav a:active {
   color: #000000;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-  margin: 40px 40px 40px 40px;
+  margin: 40px auto 40px auto;
   padding: 40px 40px 40px 40px;
+  max-width: 200px;
+
+}
+
+.login-css label {
+  display: block;
+}
+
+.login-css input {
+  margin-bottom: 10px;
+  padding: 5px 7px;
+  display: block;
+  width: 90%;
+}
+
+.signup-css label {
+  display: block;
+}
+
+.signup-css input {
+  margin-bottom: 10px;
+  padding: 5px 7px;
+  display: block;
+  width: 90%;
+}
+
+.login-css .btn,
+.signup-css .btn {
+  background-color: var(--lighter-dark);
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: none;
+  font-size: 1em;
+}
+
+.login-css .btn:hover,
+.signup-css .btn:hover {
+  cursor: pointer;
+  background-color: var(--light-dark);
+  color: var(--primary);
+  transition: all 0.2s ease-in-out;
+}
+
+.signup-css .checkbox {
+  display: flex;
 }

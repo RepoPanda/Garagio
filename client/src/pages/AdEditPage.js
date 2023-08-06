@@ -7,7 +7,7 @@ import { useState } from 'react';
 function AdEditPage () 
 {
     return (
-        <h1>Hello world</h1>
+        <h1>Ad Edit Page</h1>
     )
 };
 

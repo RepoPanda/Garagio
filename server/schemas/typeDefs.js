@@ -52,6 +52,10 @@ password: String,
 isSeller: Boolean
 ): Auth
 
+deleteAd(
+_id: ID!
+): Boolean
+
 login (
 	email: String!, 
     password: String!

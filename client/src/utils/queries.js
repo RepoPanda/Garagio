@@ -13,6 +13,21 @@ query users {
     isSeller
   }
 }`;
+
+export const AD = gql`
+query AD($id: ID!) {
+  ad(_id: $id) {
+    _id
+    title
+    description
+    image
+    price
+    quantity
+    location
+    sold
+  }
+}`;
+
 export const ADS = gql`
 query ads {
   ads {
@@ -26,6 +41,7 @@ query ads {
     sold
   }
 }`;
+
 
 export const ME = gql`
 query me {

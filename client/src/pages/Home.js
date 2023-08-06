@@ -1,10 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { ADS } from "../utils/queries";
+import { Link } from "react-router-dom";
 
 function Home() {
 
     const { loading, data } = useQuery(ADS);
     const ads = data?.ads || [];
+
+  console.log(ads);
 
     return (
         <>
@@ -14,7 +17,7 @@ function Home() {
             ) : (
                 ads.map((ads, index) => {
                     return (
-                      <a href={`/adpage/${ads._id}`} className="home-css" key={index}>
+                      <Link to={`/adpage/${ads._id}`} className="home-css" key={index}>
                         <h2>{ads.title}</h2>
                         <ul>
                           <li>Description: {ads.description}</li>
@@ -23,7 +26,7 @@ function Home() {
                           <li>Quantity: {ads.quantity}</li>
                           <li>Location: {ads.location}</li>
                         </ul>
-                      </a>
+                      </Link>
                     );
                 })
             )}

@@ -56,12 +56,9 @@ function App() {
             path="/dashboard/:houseId"
             element={<AdEditPage />}
           />
-        </Routes>
-        <AdPage />
-        <Routes>
           <Route
-          path="/adpage/${ads._id}"
-          element={<AdPage />}
+            path="/adpage/:adId"
+            element={<AdPage />}
           />
         </Routes>
       </Router>

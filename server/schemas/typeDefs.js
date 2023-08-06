@@ -45,6 +45,17 @@ location: String,
 sold: Boolean
 ): Ads
 
+updateUserAd(
+_id: ID!
+title: String!
+description: String!
+image: String!
+price: Float!
+quantity: Int!
+location: String!
+sold: Boolean!
+): Ads
+
 createUser(
 username: String,
 email: String,

@@ -37,7 +37,13 @@ function AdEditPage () {
     const handleChange = (event) => {
         event.preventDefault();
 
-        const { name, value } = event.target;
+        let { name, value } = event.target;
+
+        if (name === "price") {
+            value = parseFloat(value);
+        } else if (name === "quantity") {
+            value = parseInt(value);
+        }
 
         setFormState({
             ...formState,

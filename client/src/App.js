@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import Dashboard from './pages/Dashboard';
 import AdPage from './pages/AdPage';
+import AdEditPage from './pages/AdEditPage';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -50,6 +51,10 @@ function App() {
           <Route
             path="/dashboard"
             element={<Dashboard />}
+          />
+          <Route
+            path="/dashboard/:houseId"
+            element={<AdEditPage />}
           />
         </Routes>
         <AdPage />

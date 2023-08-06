@@ -1,6 +1,6 @@
-const {User, Ads} = require('../models');
+const { User, Ads } = require('../models');
 const { signToken } = require('../utils/auth');
-const { AuthenticationError } =require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 
 
 const resolvers = {
@@ -14,14 +14,14 @@ const resolvers = {
         secret: async (_, args, context) => {
             if (context.user) {
                 return 'Secret message!'
-            } else { 
+            } else {
                 throw new AuthenticationError('You need to be logged in!')
             }
         },
         me: async (_, args, context) => {
             if (context.user) {
                 return await User.findById(context.user._id).populate('ads');
-            } else { 
+            } else {
                 throw new AuthenticationError('You need to be logged in!')
             }
 
@@ -43,14 +43,25 @@ const resolvers = {
 
             return ad;
         },
+        deleteAd: async (_, args, context) => {
+            const response = await Ads.deleteOne(args);
+
+            // await User.findOneAndUpdate(
+            //     {_id: context.user._id}
+            // )
+            return (response.deletedCount > 0) ? true : false;
+        },
+        updateUserAd: async (_,args) => {
+            return await Ads.findOneAndUpdate({ _id: args._id }, { ...args }, { new: true })
+        },
         createUser: async (_, args) => {
             const user = await User.create(args);
             const token = signToken(user);
 
             return { user, token }
-            
+
         },
-        login: async (_, { email, password }) => { 
+        login: async (_, { email, password }) => {
 
             const user = await User.findOne({ email });
 
@@ -59,16 +70,16 @@ const resolvers = {
             }
 
             const correctPw = await user.isCorrectPassword(password);
-            
+
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect credentials');
             }
-            
+
             const token = signToken(user);
 
             return { user, token }
         }
-            
+
     }
 }
 

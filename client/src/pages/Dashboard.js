@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { ADS, ME } from "../utils/queries";
 import { POST_AD, DELETE_AD } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
     const { loading, data } = useQuery(ME);
@@ -149,9 +150,7 @@ function Dashboard() {
                     me.ads.map((userAd, index) => {
                         return (
                             <div className="ad-render" key={index}>
-
-                                <button id={userAd._id} onClick={handleDelete}>Delete</button>
-                                {/* <Link to={userAd._id}>Edit</Link> */}
+                                <Link to={userAd._id}>Edit</Link>
                                 <h2>{userAd.title}</h2>
                                 <ul>
                                     <li>Description: {userAd.description}</li>
@@ -160,6 +159,7 @@ function Dashboard() {
                                     <li>Quantity: {userAd.quantity}</li>
                                     <li>Location: {userAd.location}</li>
                                 </ul>
+                                <button id={userAd._id} onClick={handleDelete}>Delete</button>
                             </div>
                         );
                     })

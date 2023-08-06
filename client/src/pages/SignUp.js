@@ -113,7 +113,7 @@ function SignUp () {
                 
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3 checkbox'>
               <Form.Label htmlFor="isSeller">Selling Items?</Form.Label>
               <Form.Control
                 type="checkbox"

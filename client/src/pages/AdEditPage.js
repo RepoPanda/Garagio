@@ -59,7 +59,30 @@ function AdEditPage () {
 	}
 
     return (
-       
+       <div>
+        <h1>Edit page</h1>
+        <form onSubmit={handleSubmit}>
+            <label>Title:
+                <input type='text' name='title' value={formState.title} onChange={handleChange} />
+            </label>
+            <label>Description:
+                <input type='text' name='description' value={formState.description} onChange={handleChange} />
+            </label>
+            <label>Image:
+                <input type='text' name='image' value={formState.image} onChange={handleChange} />
+            </label>
+            <label>Price:
+                <input type='number' name='price' value={formState.price} onChange={handleChange} />
+            </label>
+            <label>Quantity:
+                <input type='number' name='quantity' value={formState.quantity} onChange={handleChange} />
+            </label>
+            <label>Location:
+                <input type='text' name='location' value={formState.location} onChange={handleChange} />
+            </label>
+            <button type="submit">Save Changes</button>
+        </form>
+       </div>
     )
 };
 

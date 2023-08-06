@@ -20,7 +20,7 @@ mutation deleteAd($id: ID!) {
 }`
 
 export const UPDATE_USER_AD = gql`
-mutation updateUserAd($id: ID!, $title: String!, $description: String!, $image: String!, $price: Float!, $quantity: Int!, $location: String!, $sold: Boolean!) {
+mutation updateUserAd($id: ID!, $title: String!, $description: String!, $image: String!, $price: Float!, $quantity: Int!, $location: String!, $sold: Boolean) {
   updateUserAd(_id: $id, title: $title, description: $description, image: $image, price: $price, quantity: $quantity, location: $location, sold: $sold) {
     _id
     title

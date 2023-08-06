@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from '@apollo/client';
-import { ADS } from '../utils/queries';
+import { AD } from '../utils/queries';
 import { UPDATE_USER_AD } from '../utils/mutations';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -15,21 +15,21 @@ function AdEditPage () {
         location: ''
     });
     
-    const { userAdId } = useParams();
+    const { adId } = useParams();
 
     const [updateUserAd] = useMutation(UPDATE_USER_AD);
 
-    const { loading } = useQuery(ADS, {
-        variables: { id: userAdId },
+    const { loading } = useQuery(AD, {
+        variables: { id: adId },
         onCompleted: data => {
             setFormState({
-                id: data.ads._id,
-                title: data.ads.title,
-                description: data.ads.description,
-                image: data.ads.image,
-                price: data.ads.price,
-                quantity: data.ads.quantity,
-                location: data.ads.quantity
+                id: data.ad._id,
+                title: data.ad.title,
+                description: data.ad.description,
+                image: data.ad.image,
+                price: data.ad.price,
+                quantity: data.ad.quantity,
+                location: data.ad.location
             });
         }
     });
@@ -49,7 +49,7 @@ function AdEditPage () {
         event.preventDefault();
 
         await updateUserAd({
-            variable: formState
+            variables: formState
         });
         window.location.replace('/dashboard');
     };

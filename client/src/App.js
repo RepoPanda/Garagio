@@ -52,7 +52,7 @@ function App() {
             element={<Dashboard />}
           />
           <Route
-            path="/dashboard/:houseId"
+            path="/dashboard/:adId"
             element={<AdEditPage />}
           />
         </Routes>

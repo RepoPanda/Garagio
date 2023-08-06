@@ -16,19 +16,20 @@ function AdEditPage () {
     });
     
     const { userAdId } = useParams();
+
     const [updateUserAd] = useMutation(UPDATE_USER_AD);
 
     const { loading } = useQuery(ADS, {
         variables: { id: userAdId },
         onCompleted: data => {
             setFormState({
-                id: data.userAd._id,
-                title: data.userAd.title,
-                description: data.userAd.description,
-                image: data.userAd.image,
-                price: data.userAd.price,
-                quantity: data.userAd.quantity,
-                location: data.user
+                id: data.ads._id,
+                title: data.ads.title,
+                description: data.ads.description,
+                image: data.ads.image,
+                price: data.ads.price,
+                quantity: data.ads.quantity,
+                location: data.ads.quantity
             });
         }
     });

@@ -14,6 +14,12 @@ mutation postAd($title: String, $description: String, $image: String, $price: Fl
   }
 }`
 
+export const DELETE_AD = gql`
+mutation deleteAd($id: ID!) {
+  deleteAd(_id: $id)
+}`
+
+
 export const CREATE_USER = gql`
 mutation createUser($username: String, $email: String, $password: String, $isSeller: Boolean) {
   createUser(username: $username, email: $email, password: $password, isSeller: $isSeller) {

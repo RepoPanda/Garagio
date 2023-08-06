@@ -43,6 +43,15 @@ const resolvers = {
 
             return ad;
         },
+        deleteAd: async (_, args, context) => {
+            const response = await Ads.deleteOne(args);
+
+            // await User.findOneAndUpdate(
+            //     {_id: context.user._id}
+            // )
+            return (response.deletedCount > 0) ? true : false;
+        },
+
         createUser: async (_, args) => {
             const user = await User.create(args);
             const token = signToken(user);

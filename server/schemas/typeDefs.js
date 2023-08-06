@@ -28,6 +28,7 @@ isSeller: Boolean!
 
 type Query {
 ads: [Ads]
+ad(_id: ID!): Ads
 users: [User]
 secret: String
 me: User

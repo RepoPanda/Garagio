@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import Dashboard from './pages/Dashboard';
+import AdPage from './pages/AdPage';
 import AdEditPage from './pages/AdEditPage';
 
 const httpLink = createHttpLink({
@@ -54,6 +55,10 @@ function App() {
           <Route
             path="/dashboard/:houseId"
             element={<AdEditPage />}
+          />
+          <Route
+            path="/adpage/:adId"
+            element={<AdPage />}
           />
         </Routes>
       </Router>

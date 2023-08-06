@@ -11,6 +11,9 @@ const resolvers = {
         ads: async () => {
             return await Ads.find({});
         },
+        ad: async (_,{_id}) => {
+            return await Ads.findOne({_id});
+        },
         secret: async (_, args, context) => {
             if (context.user) {
                 return 'Secret message!'

@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 function Dashboard() {
     const { loading, data } = useQuery(ME);
     const me = data?.me || {};
-    // const userAdData = me.ads;
 
     const [postAd] = useMutation(POST_AD);
     const [deleteAd] = useMutation(DELETE_AD);

@@ -54,7 +54,7 @@ image: String!
 price: Float!
 quantity: Int!
 location: String!
-sold: Boolean!
+sold: Boolean
 ): Ads
 
 createUser(

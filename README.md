@@ -1,67 +1,72 @@
-# garagio
+# Garagio
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Our motivation for this project was to practice and learn to use the MERN paradigm in a full-stack application. We built a e-commerce site that allows users to cycle through private garage sale postings. Users can create an account, login, and post items for sale. Users can also view items for sale and make a purchase.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+## Table of Contents
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+- [Garagio](#garagio)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Collaborators :](#collaborators-)
+  - [Features](#features)
+    - [Please Visit Our GitHub Repo Link](#please-visit-our-github-repo-link)
+    - [Please Visit Our Deployed Heroku link](#please-visit-our-deployed-heroku-link)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+In order to install this project, you will need to clone the repo to your local machine from our [GitHub Repository](https://github.com/RepoPanda/garagio). You will also need to install the dependencies for both the client and server side. To do this, run npm i in both the root directory and the client directory. Once you have installed the dependencies, you can run npm run develop in the root directory to start the application.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Once greeted by the homepage, you can click on the login button to login or signup.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Home Page:
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![Screenshot 2023-08-07 at 12 55 53 PM](https://github.com/RepoPanda/garagio/assets/124810474/2267d004-0f02-4f14-bd34-6453d084166c)
 
-## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+You will then need to sign up  to create an account and login. To sign up youll navigate to the signup page and fill out the form.
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Signup Page:
 
-If you followed tutorials, include links to those here as well.
+![Screenshot 2023-08-07 at 1 28 17 PM](https://github.com/RepoPanda/garagio/assets/124810474/a17bbf07-4b44-47ef-b905-e028ba128296)
 
-## License
+If you already have an account you can login with your credentials.
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+Login Page:
 
----
+![Screenshot 2023-08-07 at 1 31 49 PM](https://github.com/RepoPanda/garagio/assets/124810474/93bab362-cce7-4a73-809f-3fc11966e341)
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+Once you have an account you can login and you will be redirected to the dashboard page.
 
-## Badges
+Dashboard Page:
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+![Screenshot 2023-08-07 at 1 32 46 PM](https://github.com/RepoPanda/garagio/assets/124810474/973c9b86-3994-4eaa-9c0c-3e790fd3615c)
 
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+From the homepage you can also click on the view items button to view all items for sale.
+
+Selected Item for purchase Page:
+
+![Screenshot 2023-08-07 at 1 33 42 PM](https://github.com/RepoPanda/garagio/assets/124810474/65141d25-dce8-4a61-9f90-78dd9cb3295c)
+
+
+
+## Collaborators :
+
+- Gevorg Avetisyan (GitHub: gevbusiness)
+- Haojie Hu ( GitHub: Justinhu97)
+- Laura Mendez (GitHub: lim204)
+- Madilyn Cooper(GitHub: Madilyncooper)
+- Mounir Wassef (GitHub: mounirwassef)
+- Philip Mejia (GitHub: RepoPanda)
+- Yasmine Tsu (GitHub: yasminetsu)
 
 ## Features
 
-If your project has a lot of features, list them here.
 
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+### Please Visit [Our GitHub Repo Link](https://github.com/RepoPanda/garagio)
+### Please Visit [Our Deployed Heroku link](https://garagio-16dff4078a93.herokuapp.com/)

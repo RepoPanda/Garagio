@@ -96,9 +96,6 @@ nav a:active {
   color: var(--dark);
 }
 
-.submit-button {
-
-}
 
 .ad-render {
   display: flex;
@@ -149,7 +146,9 @@ nav a:active {
 }
 
 .login-css .btn,
-.signup-css .btn {
+.signup-css .btn,
+.ad-render .btn,
+.form-css .btn {
   background-color: var(--lighter-dark);
   border-radius: 4px;
   padding: 5px 10px;
@@ -158,7 +157,9 @@ nav a:active {
 }
 
 .login-css .btn:hover,
-.signup-css .btn:hover {
+.signup-css .btn:hover,
+.ad-render .btn:hover,
+.form-css .btn:hover{
   cursor: pointer;
   background-color: var(--light-dark);
   color: var(--primary);

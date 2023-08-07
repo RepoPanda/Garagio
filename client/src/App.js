@@ -10,6 +10,8 @@ import Dashboard from './pages/Dashboard';
 import AdPage from './pages/AdPage';
 import AdEditPage from './pages/AdEditPage';
 
+
+
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
@@ -31,6 +33,8 @@ const client = new ApolloClient({
 })
 
 function App() {
+
+
   return (
     <ApolloProvider client={client}>
       <Router>

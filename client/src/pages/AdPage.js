@@ -3,6 +3,7 @@ import { AD } from "../utils/queries";
 import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import BuyButtonComponent from "./BuyButtonComponent";
 
 function AdPage() {
   const { adId } = useParams();
@@ -32,7 +33,9 @@ function AdPage() {
                   <p>Item Description:{ad.description}</p>
                 </div>
 
-                <button className="btn btn-primary">Purchase Item</button>
+                {/* <button className="btn btn-primary">Purchase Item</button> */}
+<BuyButtonComponent></BuyButtonComponent>
+
 
               </Container>
             )}

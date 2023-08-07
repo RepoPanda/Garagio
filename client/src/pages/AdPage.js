@@ -1,7 +1,8 @@
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { AD } from "../utils/queries";
 import { useParams } from 'react-router-dom';
-import { useState } from 'react'; 
+import { Container } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
 
 function AdPage() {
   const { adId } = useParams();
@@ -16,7 +17,25 @@ function AdPage() {
        <div>
             {loading ? (
                 <div>Loading...</div>
-            ) : (<h1>{ad.title}</h1>)}
+            ) : (
+              <Container className="soloAd">
+                <header className="flex-row space-between">
+                <h1>{ad.title}</h1>
+                </header>
+                <div className="adImage">
+                  <Image src={ad.image}></Image>
+                </div>
+                <div className="adInfo">
+                  <p>Price:{ad.price}</p>
+                  <p>Item Location:{ad.location}</p>
+                  <p>Quantity Available:{ad.quantity}</p>
+                  <p>Item Description:{ad.description}</p>
+                </div>
+
+                <button className="btn btn-primary">Purchase Item</button>
+
+              </Container>
+            )}
         </div>
       </>
     );

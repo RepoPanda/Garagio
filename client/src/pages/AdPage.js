@@ -31,6 +31,8 @@ function AdPage() {
                   <p>Quantity Available:{ad.quantity}</p>
                 </div>
 
+                <button className="btn btn-primary">Purchase Item</button>
+
               </Container>
             )}
         </div>

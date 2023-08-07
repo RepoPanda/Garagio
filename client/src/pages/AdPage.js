@@ -36,6 +36,7 @@ function AdPage() {
                 {/* <button className="btn btn-primary">Purchase Item</button> */}
 <BuyButtonComponent></BuyButtonComponent>
 
+
               </Container>
             )}
         </div>

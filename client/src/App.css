@@ -148,7 +148,8 @@ nav a:active {
 .login-css .btn,
 .signup-css .btn,
 .ad-render .btn,
-.form-css .btn {
+.form-css .btn,
+.uploadImage .btn {
   background-color: var(--lighter-dark);
   border-radius: 4px;
   padding: 5px 10px;

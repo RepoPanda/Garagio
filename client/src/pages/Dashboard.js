@@ -4,6 +4,7 @@ import { ADS, ME } from "../utils/queries";
 import { POST_AD, DELETE_AD } from '../utils/mutations';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import ImageUpload from "./ImageUpload";
 
 function Dashboard() {
     const { loading, data } = useQuery(ME);
@@ -136,10 +137,11 @@ function Dashboard() {
                 onChange={handleChange}
               />
             </div>
-
+            <ImageUpload></ImageUpload>
             <Button className="submit-button" type="submit">
             Post New Ad
             </Button>
+            
 
           </form>
         </div>

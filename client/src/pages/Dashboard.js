@@ -154,10 +154,10 @@ function Dashboard() {
                 <div className="ad-render" key={index}>
                   <Link to={userAd._id}>Edit</Link>
                   <h2>{userAd.title}</h2>
-                  <ul>
+                  <ul className="list">
                     <li>Description: {userAd.description}</li>
                     <li>Image Here: {userAd.image}</li>
-                    <li>Price: {userAd.price}</li>
+                    <li>Price: ${userAd.price}</li>
                     <li>Quantity: {userAd.quantity}</li>
                     <li>Location: {userAd.location}</li>
                   </ul>

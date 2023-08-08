@@ -19,7 +19,7 @@ function Home() {
                     return (
                       <Link to={`/adpage/${ads._id}`} className="home-css" key={index}>
                         <h2>{ads.title}</h2>
-                        <ul>
+                        <ul className="list">
                           <li>Description: {ads.description}</li>
                           <li>Image: {ads.description}</li>
                           <li>Price: ${ads.price}</li>
